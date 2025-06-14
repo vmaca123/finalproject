@@ -1,0 +1,345 @@
+/* 패럴랙스 효과 섹션 */
+.parallax-section {
+    min-height: 100vh;
+    width: 100vw;
+    background-image: url('img/pexels-yu-chen-huang-317252191-14191547.jpg');
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+}
+.parallax-section::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255,255,255,0.02);
+    z-index: 2;
+}
+
+@media (max-width: 900px) {
+    .parallax-section {
+        min-height: 50vh;
+        background-attachment: scroll;
+    }
+}
+
+/* 팀 패럴랙스 효과 섹션 */
+.parallax-team-section {
+    min-height: 60vh;
+    width: 100vw;
+    background-image: url('img/pexels-yu-chen-huang-317252191-14191547.jpg');
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+}
+.parallax-team-section::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.18);
+    z-index: 2;
+}
+@media (max-width: 900px) {
+    .parallax-team-section {
+        min-height: 30vh;
+        background-attachment: scroll;
+    }
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', '맑은 고딕', Arial, sans-serif;
+    background: #f5f3ea url('img/bg.png') no-repeat center top/cover;
+    color: #7c5c3b;
+    min-height: 100vh;
+    scroll-snap-type: y mandatory;
+    padding-top: 60px; 
+}
+header {
+    position: relative;
+    width: 100vw;
+    z-index: 10;
+    background: url('img/capybara-farm.png') no-repeat center/cover, rgba(255,245,220,0.7);
+    background-blend-mode: lighten;
+    padding: 0;
+    text-align: center;
+    box-shadow: none;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #a68b5b;
+}
+header p {
+    color: #666;
+    margin-bottom: 20px;
+}
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background: rgba(255,245,220,0.95);
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    padding: 0.5rem 0;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin: 0;
+    padding: 0;
+}
+nav a {
+    text-decoration: none;
+    color: #bfa77a;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+nav a:hover {
+    color: #a68b5b;
+}
+main {
+    display: block;
+    max-width: none;
+    margin: 0;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    margin-top: 0;
+}
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+    padding: 0 20px;
+    scroll-snap-align: start;
+}
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 72px;
+    margin-top: 24px;
+}
+.project {
+    background: #f8f3e6;
+    border-radius: 10px;
+    padding: 18px 20px;
+    box-shadow: 0 2px 8px rgba(0,119,255,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 260px;
+    min-width: 220px;
+    max-width: 320px;
+}
+footer {
+    text-align: center;
+    padding: 18px 0;
+    background: #f3e9d7;
+    color: #a68b5b;
+    font-size: 0.95rem;
+    margin-top: 40px;
+}
+.team-list {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    margin-top: 18px;
+    flex-wrap: nowrap;
+}
+.team-member {
+    background: #f8f3e6;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,119,255,0.05);
+    padding: 18px 24px;
+    min-width: 260px;
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.team-member img {
+    margin-bottom: 10px;
+    border: 2px solid #cce0ff;
+}
+.team-member h3 {
+    margin: 8px 0 6px 0;
+    font-size: 1.1rem;
+    color: #0077ff;
+}
+.team-member p {
+    color: #7c5c3b;
+    font-size: 0.98rem;
+}
+.about-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 18px;
+    color: #8B5C2A;
+}
+#about img {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: 18px auto 0 auto;
+    border-radius: 50%;
+    background: #eee;
+    object-fit: cover;
+}
+#about p {
+    margin-top: 22px;
+    font-size: 1.25rem;
+    color: #7c5c3b;
+}
+#projects, #team, #contact {
+    border-top: 2px solid #e2d3b3;
+    padding-top: 48px;
+    margin-top: 48px;
+}
+
+/* 섹션 페이드인 애니메이션 */
+.section-fade {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s, transform 0.8s;
+}
+.section-fade.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* 프로젝트 카드 호버 효과 */
+.project:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 24px rgba(160,120,60,0.15);
+    z-index: 2;
+}
+
+/* 팀원 팝업 */
+.profile-popup {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #fffbe9;
+    color: #7c5c3b;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(120,90,40,0.18);
+    padding: 32px 28px 18px 28px;
+    min-width: 260px;
+    z-index: 9999;
+    display: none;
+    text-align: center;
+}
+.profile-popup.active {
+    display: block;
+}
+.profile-popup .close-btn {
+    position: absolute;
+    right: 18px;
+    top: 12px;
+    font-size: 1.3rem;
+    background: none;
+    border: none;
+    color: #a68b5b;
+    cursor: pointer;
+}
+
+/* 다크모드 */
+body.dark-mode {
+    background: #2d2214 url('img/bg.png') no-repeat center top/cover;
+    color: #e7d9c0;
+}
+body.dark-mode header {
+    background: url('img/capybara-farm.png') no-repeat center/cover, rgba(60,40,20,0.8);
+    background-blend-mode: lighten;
+}
+body.dark-mode .project, body.dark-mode .team-member {
+    background: #3a2c1a;
+    color: #e7d9c0;
+}
+body.dark-mode .about-title, body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
+    color: #e7d9c0;
+}
+body.dark-mode a {
+    color: #e7d9c0;
+}
+body.dark-mode a:hover {
+    color: #ffe6b3;
+}
+body.dark-mode .profile-popup {
+    background: #3a2c1a;
+    color: #ffe6b3;
+}
+/* 다크모드 토글 버튼 */
+#darkModeToggle {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    background: #bfa77a;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    cursor: pointer;
+    z-index: 10000;
+    transition: background 0.2s;
+}
+#darkModeToggle:hover {
+    background: #a68b5b;
+}
+
+/* 타이핑 애니메이션 */
+.typing {
+    border-right: 2px solid #a68b5b;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 1.2em;
+    min-height: 1.5em;
+}
+
+/* 방문자 카운터 */
+#visitor-counter {
+    font-size: 1.1rem;
+    color: #a68b5b;
+    margin: 32px 0 8px 0;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
